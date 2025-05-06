@@ -2,6 +2,7 @@ import { fetchProductData } from '@/api/ProductApi';
 import { Ionicons } from '@expo/vector-icons';
 
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
+
 import { useRef, useState } from 'react';
 import {
   Button,
@@ -14,9 +15,11 @@ import {
 } from 'react-native';
 import Modal from 'react-native-modal';
 import ActionSheet, { ActionSheetRef } from "react-native-actions-sheet";
-import ProductDetails from './ProductDetails';
+import ProductDetails from '../ProductDetails';
+import Overlay from '../Overlay'
 
-export default function Index() {
+
+export default function Scan() {
   const actionSheetRef = useRef<ActionSheetRef>(null);
 
   const [facing, setFacing] = useState<CameraType>('back');
@@ -77,7 +80,9 @@ export default function Index() {
   }
 
   return (
-    <View style={styles.container}>
+
+    
+      <Overlay>
       <CameraView
         style={styles.camera}
         facing={facing}
@@ -91,13 +96,14 @@ export default function Index() {
       <ActionSheet ref={actionSheetRef}
        initialSnapIndex={0} 
        closable={true}
-       snapPoints={[45.5, 100]} // % of screen height
+       snapPoints={[45, 100]} // % of screen height
        gestureEnabled
        closeOnTouchBackdrop={false}
        overlayColor="white"
        defaultOverlayOpacity={0.1}
        indicatorStyle={{ display: 'flex' }}
        drawUnderStatusBar
+       onClose={closeBottomSheet} 
       //  onSnapIndexChange={handleSnapChange}
        >
          <View style={styles.sheetTopBar}>
@@ -185,8 +191,8 @@ export default function Index() {
           </TouchableOpacity>
       </View>
     </Modal>
-
-    </View>
+    </Overlay>
+  
   );
 }
 

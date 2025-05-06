@@ -1,10 +1,10 @@
-import { EvilIcons, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { EvilIcons, Ionicons, MaterialIcons,Octicons,Fontisto } from '@expo/vector-icons';
 import React, { useRef, useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-actions-sheet';
 import ActionSheet, { ActionSheetRef } from 'react-native-actions-sheet';
-import Octicons from 'react-native-vector-icons/Octicons';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+
+
 
 
 
@@ -83,7 +83,7 @@ export default function ProductDetails({ data, closeBottomSheet }: ProductDetail
 
       <View style={styles.detailRow}>
       <View style={styles.iconTextRow}>
-      <Fontisto name="search" color="#000" size={15} />
+      <Octicons name="question" color="#000" size={15} />
       <Text style={styles.detailText}>Questionable ingredients:</Text>
       </View>
         <View style={styles.rightDetail}>
