@@ -1,0 +1,163 @@
+[
+  {
+    "ingredient_name": "pork",
+    "reason": "Forbidden animal"
+  },
+  {
+    "ingredient_name": "lard",
+    "reason": "Fat derived from pork"
+  },
+  {
+    "ingredient_name": "gelatin (porcine)",
+    "reason": "Derived from pig"
+  },
+  {
+    "ingredient_name": "porcine)",
+    "reason": "Derived from pig"
+  },
+  {
+    "ingredient_name": "gelatin",
+    "reason": "Derived from pig"
+  },
+  {
+    "ingredient_name": "enzymes (pork)",
+    "reason": "Used in cheese/dairy"
+  },
+  {
+    "ingredient_name": "pepsin",
+    "reason": "From pig stomach"
+  },
+  {
+    "ingredient_name": "ethanol",
+    "reason": "Alcoholic component"
+  },
+  {
+    "ingredient_name": "wine",
+    "reason": "Alcoholic beverage"
+  },
+  {
+    "ingredient_name": "beer",
+    "reason": "Alcoholic beverage"
+  },
+  {
+    "ingredient_name": "liquor",
+    "reason": "Alcoholic beverage"
+  },
+  {
+    "ingredient_name": "alcohol-based flavorings",
+    "reason": "May contain ethanol"
+  },
+  {
+    "ingredient_name": "blood",
+    "reason": "Consumption forbidden"
+  },
+  {
+    "ingredient_name": "blood plasma",
+    "reason": "Animal blood by-product"
+  },
+  {
+    "ingredient_name": "blood sausage",
+    "reason": "Made with blood"
+  },
+  {
+    "ingredient_name": "carrion",
+    "reason": "Not properly slaughtered"
+  },
+
+  {
+    "ingredient_name": "lion",
+    "reason": "Carnivorous animal"
+  },
+  {
+    "ingredient_name": "tiger",
+    "reason": "Carnivorous animal"
+  },
+  {
+    "ingredient_name": "bear",
+    "reason": "Carnivorous animal"
+  },
+  {
+    "ingredient_name": "eagle",
+    "reason": "Bird of prey"
+  },
+  {
+    "ingredient_name": "hawk",
+    "reason": "Bird of prey"
+  },
+  {
+    "ingredient_name": "falcon",
+    "reason": "Bird of prey"
+  },
+  {
+    "ingredient_name": "frog",
+    "reason": "Amphibian"
+  },
+  {
+    "ingredient_name": "snake",
+    "reason": "Reptile"
+  },
+  {
+    "ingredient_name": "crocodile",
+    "reason": "Reptile"
+  },
+  {
+    "ingredient_name": "rennet (non-halal)",
+    "reason": "From non-halal animals"
+  },
+  {
+    "ingredient_name": "whey (non-halal)",
+    "reason": "From non-halal sources"
+  },
+  {
+    "ingredient_name": "animal-derived enzymes",
+    "reason": "From non-halal animals"
+  },
+  {
+    "ingredient_name": "mono and diglycerides (animal)",
+    "reason": "May be animal-based"
+  },
+  {
+    "ingredient_name": "lecithin (animal)",
+    "reason": "May be animal-based"
+  },
+  {
+    "ingredient_name": "animal shortening",
+    "reason": "From animal fats"
+  },
+  {
+    "ingredient_name": "lipase (pork)",
+    "reason": "Used in cheese production"
+  },
+  {
+    "ingredient_name": "hormones (animal-based)",
+    "reason": "Used in meat production"
+  },
+  {
+    "ingredient_name": "cochineal (E120)",
+    "reason": "Insect-derived dye"
+  },
+  {
+    "ingredient_name": "shellac (E904)",
+    "reason": "Insect secretion"
+  },
+  {
+    "ingredient_name": "l-cysteine",
+    "reason": "May be from hair or feathers"
+  },
+  {
+    "ingredient_name": "E120",
+    "reason": "Cochineal - insect based"
+  },
+  {
+    "ingredient_name": "E441",
+    "reason": "Gelatin - animal source"
+  },
+  {
+    "ingredient_name": "E542",
+    "reason": "Edible bone phosphate"
+  },
+  {
+    "ingredient_name": "E904",
+    "reason": "Shellac - insect secretion"
+  }
+]
