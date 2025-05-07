@@ -1,45 +1,24 @@
-import haramList from './haram-list.json';
-
 export const fetchProductData = async (barcode: string) => {
+  if (!/^\d{8,14}$/.test(barcode)) {
+    throw new Error('Invalid barcode format');
+  }
+
   try {
-    const response = await fetch(`https://world.openfoodfacts.net/api/v2/product/${barcode}.json`);
-    const data = await response.json();
+    const response = await fetch(`http://192.168.0.103:3001/product/${barcode}`);
+    console.log(barcode)
 
-    if (!data.product) {
-      return null;
+    if (!response.ok) {
+      const errorText = await response.text();
+      return null
     }
+    
+    const data = await response.json();
+    console.log(data)
+    if (!data) return null;
 
-    const product = data.product;
+    console.log(data);
+    return data;
 
-    // Use ingredients_text_en or fallback
-    const rawIngredients = product.ingredients_text_en || product.ingredients_text || '';
-    const parsedIngredients = rawIngredients
-      .split(',')
-      .map((item: string) => item.trim().toLowerCase());
-
-    // Match against haram list
-    const haramIngredients = parsedIngredients.filter((ingredient: string | string[]) =>
-      haramList.some((entry) =>
-        ingredient.includes(entry.ingredient_name.toLowerCase())
-      )
-    );
-
-    // Build simplified product object
-    const productData = {
-      product_name: product.product_name || '',
-      brand: product.brands || '',
-      categories: product.categories_tags || [],
-      isHaram: haramIngredients.length > 0,
-      haramIngredients,
-      fullIngredients: parsedIngredients,
-      image_url: product.image_url || '',
-      countries: product.countries || '',
-      stores: product.store_tags || '',
-      product_type: product.product_type || '',
-      barcode: product.code || ''
-    };
-
-    return productData;
   } catch (error) {
     console.error("Error fetching product data:", error);
     throw error;

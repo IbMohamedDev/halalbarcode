@@ -14,9 +14,10 @@ interface ProductDetailsProps {
     image_url?: string;
     product_name: string;
     brand: string;
-    isHaram: boolean;
-    haramIngredients: string[];
-    fullIngredients: string[];
+    is_haram: boolean;
+    haram_ingredients: string[];
+    ingredients: string[];
+    halal_certifications: string[]
   };
   closeBottomSheet: () => void;
 }
@@ -54,10 +55,10 @@ export default function ProductDetails({ data, closeBottomSheet }: ProductDetail
           <Text style={styles.productName}>{data.product_name}</Text>
           <Text style={styles.brand}>{data.brand}</Text>
           <View style={styles.scoreRow}>
-          <View style={[styles.mainStatusDot, { backgroundColor: data.isHaram ? '#FF6258' : '#00B56A' }]} />
+          <View style={[styles.mainStatusDot, { backgroundColor: data.is_haram ? '#FF6258' : '#00B56A' }]} />
             {/* <Text style={styles.scoreText}>{data.isHaram ? 'Haram' : 'Halal'}</Text> */}
-            <Text style={[{ fontWeight: 'bold', color: data.isHaram ? '#FF6258' : '#00B56A' }, styles.statusLabel]}>
-                    {data.isHaram ? 'Haram' : 'Halal'}
+            <Text style={[{ fontWeight: 'bold', color: data.is_haram ? '#FF6258' : '#00B56A' }, styles.statusLabel]}>
+                    {data.is_haram ? 'Haram' : 'Halal'}
                 </Text>
           </View>
    
@@ -72,7 +73,8 @@ export default function ProductDetails({ data, closeBottomSheet }: ProductDetail
     <Text style={styles.detailText}>Haram ingredients:</Text>
   </View>
   <View style={styles.rightDetail}>
-    <Text style={styles.countText}>{data.haramIngredients.length}</Text>
+  <Text style={styles.countText}>{data.haram_ingredients?.length ?? 0}</Text>
+
     <View style={[styles.statusDot, { backgroundColor: '#FF6258' }]} />
     <TouchableOpacity onPress={() => setShowDetails(!showDetails)}>
       <Ionicons name="chevron-down-sharp" size={20} color="gray" />
@@ -99,10 +101,10 @@ export default function ProductDetails({ data, closeBottomSheet }: ProductDetail
       <View style={styles.detailRow}>
       <View style={styles.iconTextRow}>
       <Octicons name="verified" color="#000" size={15} />
-        <Text style={styles.detailText}>Halal Certification:</Text>
+        <Text style={styles.detailText}>Halal certified:</Text>
         </View>
         <View style={styles.rightDetail}>
-          <Text style={styles.countText}>No</Text>
+          <Text style={styles.countText}>{data.halal_certifications?.length ? 'Yes' : 'No'} </Text>
           <View style={[styles.statusDot, { backgroundColor: '#00B56A' }]} />
           <TouchableOpacity onPress={() => setShowDetails(!showDetails)}>
             <Ionicons name="chevron-down-sharp" size={20} color="gray" />
@@ -140,11 +142,12 @@ export default function ProductDetails({ data, closeBottomSheet }: ProductDetail
         <View style={styles.ingredientHeader}>
           <Text style={styles.ingredientName}>Ingredients</Text>
           <View style={styles.riskBadge}>
-            <Text style={styles.riskBadgeText}>{data.haramIngredients.length} haram found</Text>
+            <Text style={styles.riskBadgeText}>{data.haram_ingredients?.length ?? 0}  haram found</Text>
           </View>
         </View>
         <Text style={styles.ingredientDescription}>
-          {data.fullIngredients.join(', ')}
+        {data.ingredients?.join(', ') ?? 'No ingredients listed'}
+
         </Text>
       </View>
 
@@ -257,6 +260,7 @@ const styles = StyleSheet.create({
   },
   riskBadge: {
     backgroundColor: '#fff',
+    borderColor:'#aaa',
     borderWidth: 1,
     borderRadius: 12,
     paddingHorizontal: 10,
@@ -265,7 +269,7 @@ const styles = StyleSheet.create({
   riskBadgeText: {
     fontSize: 12,
     fontWeight: '600',
-    color: '#ccc',
+    color: '#aaa',
   },
   toggleButton: {
     backgroundColor: '#00B56A',

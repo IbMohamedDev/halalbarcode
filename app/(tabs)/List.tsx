@@ -16,7 +16,7 @@ const foodData = [
     { id: '8', title: 'Meat', image: require('../../assets/images/meat_moji.png'), locked: true },
     { id: '9', title: 'Chicken', image: require('../../assets/images/chicken_moji.png'), locked: true },
     { id: '10', title: 'Seafood', image: require('../../assets/images/seafood_moji.png'),locked: true },
-    // { id: '11', title: 'Dark Chocolate Bars', image: require('../../assets/images/drink_moji.png'), locked: true },
+    { id: '11', title: 'Plant-based', image: require('../../assets/images/plant_moji.png'), locked: true },
     { id: '12', title: 'Coffee', image: require('../../assets/images/coffee_moji.png'), locked: true },
 
     // { id: '13', title: 'Candy', image: require('../../assets/images/drink_moji.png'), locked: true },
